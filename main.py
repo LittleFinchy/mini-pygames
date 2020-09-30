@@ -16,6 +16,7 @@ test = Drop()
 
 run = True
 while run:
+    print((pygame.display.get_surface().get_size()))
     test.fall()
     test.show(win)
     for event in pygame.event.get():
