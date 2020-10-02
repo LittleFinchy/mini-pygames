@@ -16,9 +16,10 @@ test = Drop()
 
 run = True
 while run:
-    print((pygame.display.get_surface().get_size()))
+    print((pygame.display.get_surface().get_size())[0])
     test.fall()
     test.show(win)
+    test.doctor()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
