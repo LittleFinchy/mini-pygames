@@ -5,8 +5,9 @@ class Stick:
     def __init__(self, x, w):
         self.x = x
         self.w = w
-        self.h = random.randint(10,500)
-        self.top = pygame.display.get_surface().get_size()[1] - self.h
+        self.h = random.randint(10,pygame.display.get_surface().get_size()[1] - 100)
+
+        self.color = (155,0,0)
     
     def __gt__(self, other):
         if self.h > other.h:
@@ -19,4 +20,5 @@ class Stick:
         return False
 
     def show(self, win):
-        pygame.draw.rect(win, (155,0,0), (self.x, self.top, self.w, self.h))
+        self.top = pygame.display.get_surface().get_size()[1] - self.h
+        pygame.draw.rect(win, self.color, (self.x, self.top, self.w, self.h))
