@@ -34,14 +34,14 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-        if event.type == MOUSEBUTTONDOWN:
-            show_umb = True        
-        if event.type == MOUSEBUTTONUP:
-            show_umb = False
+        # if event.type == MOUSEBUTTONDOWN:
+        #     show_umb = True        
+        # if event.type == MOUSEBUTTONUP:
+        #     show_umb = False
     
-    if show_umb:
-        umb.update()
-        umb.show(win)
+    #if show_umb:
+    umb.update()
+    umb.show(win)
 
     pygame.display.update()
     win.fill((0,0,0))
