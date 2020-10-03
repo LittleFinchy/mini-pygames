@@ -4,8 +4,8 @@ import math
 class Umbrella:
     def __init__(self, center):
         self.center = pygame.mouse.get_pos()
-        self.w = 100
-        self.h = 60
+        self.w = 200
+        self.h = 160
         self.left = self.center[0] - self.w/2
         self.top = self.center[1] - self.h/2 - 50
         

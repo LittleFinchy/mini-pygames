@@ -21,7 +21,7 @@ class Drop:
 
     def check_umb(self, umb):
         if self.x > umb.left and self.x < umb.left + umb.w:
-            if self.y > umb.top and self.y < umb.top + umb.h:
+            if self.y > umb.top and self.y < umb.top + 10:
                 self.reset()
 
     def show(self, win):
