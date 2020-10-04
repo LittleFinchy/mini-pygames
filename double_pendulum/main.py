@@ -1,6 +1,6 @@
 import pygame
-import math
 from pygame.locals import *
+from string import String
 
 
 pygame.init()
@@ -14,14 +14,14 @@ a1 = 0
 a2 = 0
 m1 = 10
 m2 = 10
-x1 = int(r1 * math.sin(a1)) + mid
-y1 = int(r1 * math.cos(a1))
+
+line1 = String(mid, 50, r1, a1)
 
 
 run = True
 while run:
 
-    pygame.draw.line(win,(255,0,0), (mid,50), (x1, y1))
+    pygame.draw.line(win, line1.color, line1.point1, line1.point2)
 
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
