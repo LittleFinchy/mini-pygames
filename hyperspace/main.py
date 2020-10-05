@@ -5,8 +5,8 @@ from star import Star
 os.environ['SDL_VIDEO_CENTERED']='1'
 pygame.init()
 
-width, height = 600, 600
-fps = 60
+width, height = 1200, 800
+fps = 100
 win = pygame.display.set_mode((width,height))
 clock = pygame.time.Clock()
 
@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-NUM_OF_STARS = 800
+NUM_OF_STARS = 1000
 stars = []
 for i in range(NUM_OF_STARS):
     stars.append(Star(width, height))
@@ -30,5 +30,11 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
+    #print(stars[0].r)
+
+    for star in stars:
+        star.update()
+        star.show(win)
 
 pygame.quit()
