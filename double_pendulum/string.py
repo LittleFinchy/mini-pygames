@@ -10,6 +10,9 @@ class String:
         self.m = m
         self.point1 = [self.x1, self.y1]
 
+        self.acc = 0
+        self.vel = 0
+
         self.x2 = int(self.r * math.sin(self.a)) + self.x1
         self.y2 = int(self.r * math.cos(self.a))
         self.point2 = [self.x2, self.y2]
@@ -30,3 +33,6 @@ class String:
         self.x2 = int(self.r * math.sin(self.a)) + self.x1
         self.y2 = int(self.r * math.cos(self.a)) + self.y1
         self.point2 = [self.x2, self.y2]
+
+        self.vel += self.acc
+        self.a += self.acc
