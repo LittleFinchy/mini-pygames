@@ -1,7 +1,7 @@
 import pygame
 import math
 
-class String:
+class Rope:
     def __init__(self, x, y, r, a, m):
         self.x1 = x
         self.y1 = y
@@ -21,7 +21,7 @@ class String:
 
     
     def show(self, win):
-        pygame.draw.line(win, self.color, self.point1, self.point2)
+        pygame.draw.line(win, self.color, self.point1, self.point2, 2)
         pygame.draw.circle(win, self.color, self.point2, self.m//4)
 
     def update(self, slave=None):
@@ -35,4 +35,4 @@ class String:
         self.point2 = [self.x2, self.y2]
 
         self.vel += self.acc
-        self.a += self.acc
+        self.a += self.vel
