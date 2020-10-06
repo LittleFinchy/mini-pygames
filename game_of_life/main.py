@@ -14,11 +14,11 @@ clock = pygame.time.Clock()
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-grid = Grid(50,50)
+grid = Grid(10,10)
 
-grid.cells[10][10].s = 1
-grid.cells[11][10].s = 1
-grid.cells[12][10].s = 1
+grid.cells[1][1].s = 1
+grid.cells[2][1].s = 1
+grid.cells[3][1].s = 1
 
 run = True
 while run:
@@ -31,10 +31,13 @@ while run:
         if event.type == pygame.QUIT:
             run = False
         if event.type == pygame.MOUSEBUTTONUP:
-            grid = Grid(50,50)
+            grid = Grid(10,10)
+            grid.cells[1][1].s = 1
+            grid.cells[2][1].s = 1
+            grid.cells[3][1].s = 1
 
     grid.show(win)
-    grid.update(grid.cells)
+    grid.update()
 
 
 pygame.quit()

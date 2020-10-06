@@ -13,13 +13,12 @@ class Grid:
         for i in range(self.cols):
             self.cells.append([])
             for j in range(self.rows):
-                self.cells[i].append(Cell(i*self.x_spacing, j*self.y_spacing, self.x_spacing, self.y_spacing, 0))# random.randint(0,1)))
+                self.cells[i].append(Cell(i*self.x_spacing, j*self.y_spacing, self.x_spacing, self.y_spacing, 0)) #random.randint(0,1)))
 
-    def update(self, current):
-        self.next = current.copy()
+    def update(self):
+        self.next = self.cells.copy()
         for i in range(self.cols):
             for j in range(self.rows):
-                self.next[i][j].s = 0
                 num = self.countNeighbors(i, j)
                 if self.cells[i][j].s == 0 and num == 3:
                     self.next[i][j].s = 1
@@ -27,7 +26,7 @@ class Grid:
                     self.next[i][j].s = 0
                 else:
                     self.next[i][j].s = self.cells[i][j].s
-        self.cells = self.next
+        self.cells = self.next.copy()
 
     def countNeighbors(self, x, y):
         count = 0
@@ -51,3 +50,9 @@ class Grid:
         for i in range(self.cols):
             for j in range(self.rows):
                 self.cells[i][j].show(win)
+
+    def doctor(self):
+        for i in range(self.cols):
+            for j in range(self.rows):
+                if self.cells[i][j].s:
+                    print(i,j)
