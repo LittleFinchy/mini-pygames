@@ -7,12 +7,11 @@ class Cell:
         self.w = w-1    # width
         self.h = h-1    # height
         self.s = s      # state
-
-    def update(self, grid):
-        pass
+        self.n = s      # next state
 
     def show(self, win):
         color = (255,255,255)
+        self.s = self.n
         if self.s:
             color = (0,0,0)
         

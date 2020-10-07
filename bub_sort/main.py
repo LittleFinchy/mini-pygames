@@ -6,7 +6,7 @@ from stick import Stick
 pygame.init()
 
 win = pygame.display.set_mode((1200,600))
-NUM_OF_STICKS = 600
+NUM_OF_STICKS = 100
 stick_spacing = pygame.display.get_surface().get_size()[0] // NUM_OF_STICKS
 
 sticks = []

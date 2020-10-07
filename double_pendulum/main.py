@@ -15,13 +15,13 @@ clock = pygame.time.Clock()
 
 mid = pygame.display.get_surface().get_size()[0] // 2
 start_y = pygame.display.get_surface().get_size()[1] // 2
-r1 = 200
-r2 = 120
+r1 = 150
+r2 = 220
 a1 = math.pi/4
 a2 = math.pi
-m1 = 40
-m2 = 30
-g = 2
+m1 = 30
+m2 = 20
+g = 1
 
 line_1 = Rope(mid, start_y, r1, a1, m1)
 line_2 = Rope(line_1.x2, line_1.y2, r2, a2, m2)

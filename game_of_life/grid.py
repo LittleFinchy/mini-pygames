@@ -13,20 +13,20 @@ class Grid:
         for i in range(self.cols):
             self.cells.append([])
             for j in range(self.rows):
-                self.cells[i].append(Cell(i*self.x_spacing, j*self.y_spacing, self.x_spacing, self.y_spacing, 0)) #random.randint(0,1)))
+                self.cells[i].append(Cell(i*self.x_spacing, j*self.y_spacing, self.x_spacing, self.y_spacing, random.randint(0,1)))
 
     def update(self):
-        self.next = self.cells.copy()
         for i in range(self.cols):
             for j in range(self.rows):
                 num = self.countNeighbors(i, j)
                 if self.cells[i][j].s == 0 and num == 3:
-                    self.next[i][j].s = 1
+                    self.cells[i][j].n = 1
+                    #print(i,j, 'live', num)
                 elif self.cells[i][j].s == 1 and (num < 2 or num > 3):
-                    self.next[i][j].s = 0
+                    self.cells[i][j].n = 0
+                    #print(i,j, 'dead', num)
                 else:
-                    self.next[i][j].s = self.cells[i][j].s
-        self.cells = self.next.copy()
+                    self.cells[i][j].n = self.cells[i][j].s
 
     def countNeighbors(self, x, y):
         count = 0
@@ -55,4 +55,5 @@ class Grid:
         for i in range(self.cols):
             for j in range(self.rows):
                 if self.cells[i][j].s:
-                    print(i,j)
+                    pass
+                    #print(self.countNeighbors(i,j)
