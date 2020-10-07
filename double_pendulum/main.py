@@ -1,6 +1,7 @@
 import pygame
 import os
 import math
+import random
 from pygame.locals import *
 from rope import Rope
 
@@ -15,13 +16,16 @@ clock = pygame.time.Clock()
 
 mid = pygame.display.get_surface().get_size()[0] // 2
 start_y = pygame.display.get_surface().get_size()[1] // 2
+
 r1 = 150
 r2 = 220
 a1 = math.pi/4
 a2 = math.pi
 m1 = 30
 m2 = 20
-g = 1
+g = 2
+
+
 
 line_1 = Rope(mid, start_y, r1, a1, m1)
 line_2 = Rope(line_1.x2, line_1.y2, r2, a2, m2)
@@ -69,6 +73,17 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+        if event.type == pygame.MOUSEBUTTONUP:
+            g = 2
+            r1 = random.randint(50,200)
+            r2 = random.randint(50,200)
+            a1 = math.pi / random.randint(1,5)
+            a2 = math.pi / random.randint(1,5)
+            m1 = random.randint(10,40)
+            m2 = random.randint(10,40)
+            line_1 = Rope(mid, start_y, r1, a1, m1)
+            line_2 = Rope(line_1.x2, line_1.y2, r2, a2, m2)
+            paint_points = []
 
     pygame.display.update()
     win.fill((0,0,0))
