@@ -3,9 +3,8 @@ import random
 from cell import Cell
 
 class Grid:
-    def __init__(self, cols, rows):
-        self.cols = cols
-        self.rows = rows
+    def __init__(self, size):
+        self.cols, self.rows = size
         self.x_spacing = pygame.display.get_surface().get_size()[0] / self.cols
         self.y_spacing = pygame.display.get_surface().get_size()[1] / self.rows
 
@@ -21,10 +20,8 @@ class Grid:
                 num = self.countNeighbors(i, j)
                 if self.cells[i][j].s == 0 and num == 3:
                     self.cells[i][j].n = 1
-                    #print(i,j, 'live', num)
                 elif self.cells[i][j].s == 1 and (num < 2 or num > 3):
                     self.cells[i][j].n = 0
-                    #print(i,j, 'dead', num)
                 else:
                     self.cells[i][j].n = self.cells[i][j].s
 

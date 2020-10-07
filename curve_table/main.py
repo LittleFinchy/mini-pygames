@@ -15,7 +15,7 @@ BLACK = (0,0,0)
 
 
 ### make grid --> fill grid with shapes
-gridSize = (10,10)
+gridSize = (6,6)
 grid = Grid(gridSize)
 
 run = True
@@ -31,8 +31,8 @@ while run:
         if event.type == pygame.MOUSEBUTTONUP:
             grid = Grid(gridSize)
     
-    if grid.delta >= 2 * math.pi:
-        grid = Grid(gridSize)
+    # if grid.delta >= 2 * math.pi:
+    #     grid = Grid(gridSize)
 
     grid.show(win)
     grid.update()

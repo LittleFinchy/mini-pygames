@@ -7,6 +7,7 @@ pygame.init()
 
 win = pygame.display.set_mode((1200,600))
 clock = pygame.time.Clock()
+fps = 60
 
 RED = (20,0,0)
 NUM_OF_DROPS = 1200
@@ -24,6 +25,7 @@ umb = Umbrella([i//2 for i in pygame.display.get_surface().get_size()])
 show_umb = False
 run = True
 while run:
+    clock.tick(fps)
 
     for i in range(NUM_OF_DROPS):
         all_drops[i].fall()

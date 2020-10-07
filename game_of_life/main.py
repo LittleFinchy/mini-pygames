@@ -6,7 +6,7 @@ from grid import Grid
 os.environ['SDL_VIDEO_CENTERED']='1'
 pygame.init()
 
-width, height = 600, 600
+width, height = 800, 800
 fps = 10
 win = pygame.display.set_mode((width,height))
 clock = pygame.time.Clock()
@@ -15,8 +15,8 @@ clock = pygame.time.Clock()
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-
-grid = Grid(50,50)
+gridSize = (100,100)
+grid = Grid(gridSize)
 
 run = True
 slow = False
@@ -37,7 +37,7 @@ while run:
                 grid.update()
         
         if event.type == pygame.MOUSEBUTTONUP:
-            grid = Grid(20,20)
+            grid = Grid(gridSize)
         
 
     grid.show(win)
