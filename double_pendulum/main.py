@@ -52,8 +52,12 @@ run = True
 while run:
     clock.tick(fps)
 
+    R = random.randint(1,255)
+    B = random.randint(1,255)
+    G = random.randint(1,255)
+
     if len(paint_points) > 1:
-        pygame.draw.aalines(win, (255,0,0), False, paint_points)
+        pygame.draw.aalines(win, (R,G,B), False, paint_points)
 
     ### USE THIS DRAW OPTION IF YOUR COMPUTER IS REALLY SLOW!! (insead of the draw option above)
     '''

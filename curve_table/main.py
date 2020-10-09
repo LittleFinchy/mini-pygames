@@ -15,7 +15,7 @@ BLACK = (0,0,0)
 
 
 ### make grid --> fill grid with shapes
-gridSize = (6,6)
+gridSize = (10,10)
 grid = Grid(gridSize)
 
 run = True

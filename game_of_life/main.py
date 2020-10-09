@@ -15,7 +15,7 @@ clock = pygame.time.Clock()
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-gridSize = (100,100)
+gridSize = (60,60)
 grid = Grid(gridSize)
 
 run = True
