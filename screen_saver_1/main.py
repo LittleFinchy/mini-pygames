@@ -15,7 +15,7 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 all_dots = []
-for i in range(100):
+for i in range(10):
     all_dots.append(Dot())
 
 run = True

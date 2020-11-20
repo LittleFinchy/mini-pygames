@@ -12,6 +12,7 @@ class Dot:
         self.swing = random.randint(0, 200)
         self.width, self.height = pygame.display.get_surface().get_size()
         self.pos = [self.width + random.randint(10,500), random.randint(0, self.height)]
+        self.current_swing = 0
 
     def reset(self):
         self.size = random.randint(3,8)
@@ -23,6 +24,11 @@ class Dot:
         self.pos[0] -= self.speed
         if self.pos[0] < -100:
             self.reset()
+
+        while self.current_swing - self.swing:
+            self.pos[1] += 1
+        
+
 
 
     def show(self, win):
