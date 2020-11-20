@@ -15,7 +15,7 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 all_dots = []
-for i in range(10):
+for i in range(40):
     all_dots.append(Dot())
 
 run = True
@@ -29,6 +29,7 @@ while run:
     for dot in all_dots:
         dot.update()
         dot.show(win)
+
 
 
     for event in pygame.event.get():
