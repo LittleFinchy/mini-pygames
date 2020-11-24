@@ -26,8 +26,8 @@ class Dot:
         if self.pos[0] < -100:
             self.reset()
 
-        if random.randint(0,100) == 0:
-            self.targetY = random.randint(-10, self.height + 10)
+        if random.randint(0,1000) == 0:
+            self.targetY = random.randint(self.pos[1] - 100, self.pos[1] + 100)
 
         if self.pos[1] - self.targetY > 0:
             self.pos[1] -= 1
