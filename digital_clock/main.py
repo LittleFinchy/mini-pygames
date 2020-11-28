@@ -1,12 +1,13 @@
 import pygame
 import os
-from segment import Segment
-from digit import Digit
+import time
+from clock import Clock
+
 
 os.environ['SDL_VIDEO_CENTERED']='1'
 pygame.init()
 
-width, height = 800, 800
+width, height = 800, 350
 fps = 60
 win = pygame.display.set_mode((width,height))
 clock = pygame.time.Clock()
@@ -16,12 +17,7 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 
-
-hour1 = Digit(50, 300)
-hour2 = Digit(250, 300)
-minute1 = Digit(450, 300)
-minute2 = Digit(650, 300)
-
+my_clock = Clock()
 
 
 run = True
@@ -31,12 +27,15 @@ while run:
     pygame.display.update()
     win.fill(BLACK)
 
-    #dig.show(win)
 
-    hour1.show(win)
-    hour2.show(win)
-    minute1.show(win)
-    minute2.show(win)
+
+    hours = time.localtime()[3]
+    minutes = time.localtime()[4]
+    seconds = time.localtime()[5]
+
+    my_clock.update(hours, minutes, seconds)
+    my_clock.show(win)
+
 
 
     for event in pygame.event.get():
