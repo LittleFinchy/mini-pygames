@@ -1,15 +1,21 @@
 import pygame
-from digit import Digit
+from segment import Segment
 
 
 class Digit:
-    def __init__(self, segments):
-        self.segments = segments
+    def __init__(self, x, y):
+        self.segments = []
 
-    def build(self, x, y):
+
         # Make 7 segments centered around the x,y that is given
-        for i in range(5):
-            self.segments.append(Digit())
+        self.segments.append(Segment(x, y + 20, upright=True))
+        self.segments.append(Segment(x + 120, y + 20, upright=True))
+        self.segments.append(Segment(x + 120, y + 140, upright=True))
+        self.segments.append(Segment(x, y + 140, upright=True))
+
+        self.segments.append(Segment(x + 20, y))
+        self.segments.append(Segment(x + 20, y + 120))
+        self.segments.append(Segment(x + 20, y + 240))
 
     def update(self):
         pass
@@ -17,13 +23,3 @@ class Digit:
     def show(self, win):
         for seg in self.segments:
             seg.show(win)
-
-'''
-seg1 = Segment(40,40, upright=True)
-seg2 = Segment(60,20)
-seg3 = Segment(160,40, upright=True)
-seg4 = Segment(60,140)
-seg5 = Segment(160,160, upright=True)
-seg6 = Segment(40,160, upright=True)
-seg7 = Segment(60,260)
-'''

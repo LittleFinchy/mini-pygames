@@ -16,15 +16,13 @@ WHITE = (255,255,255)
 BLACK = (0,0,0)
 
 
-seg1 = Segment(40,40, upright=True)
-seg2 = Segment(60,20)
-seg3 = Segment(160,40, upright=True)
-seg4 = Segment(60,140)
-seg5 = Segment(160,160, upright=True)
-seg6 = Segment(40,160, upright=True)
-seg7 = Segment(60,260)
 
-dig = Digit([seg1, seg2, seg3, seg4, seg5, seg6, seg7])
+hour1 = Digit(50, 300)
+hour2 = Digit(250, 300)
+minute1 = Digit(450, 300)
+minute2 = Digit(650, 300)
+
+
 
 run = True
 while run:
@@ -33,8 +31,13 @@ while run:
     pygame.display.update()
     win.fill(BLACK)
 
+    #dig.show(win)
 
-    dig.show(win)
+    hour1.show(win)
+    hour2.show(win)
+    minute1.show(win)
+    minute2.show(win)
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
