@@ -7,6 +7,7 @@ class Digit:
         self.segments = segments
 
     def build(self, x, y):
+        # Make 7 segments centered around the x,y that is given
         for i in range(5):
             self.segments.append(Digit())
 
