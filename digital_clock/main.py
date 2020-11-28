@@ -1,6 +1,7 @@
 import pygame
 import os
 from segment import Segment
+from digit import Digit
 
 os.environ['SDL_VIDEO_CENTERED']='1'
 pygame.init()
@@ -18,6 +19,7 @@ BLACK = (0,0,0)
 seg1 = Segment(40,40, upright=True)
 seg2 = Segment(60,20)
 
+dig = Digit([seg1, seg2])
 
 run = True
 while run:
@@ -27,8 +29,7 @@ while run:
     win.fill(BLACK)
 
 
-    seg1.show(win)
-    seg2.show(win)
+    dig.show(win)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
