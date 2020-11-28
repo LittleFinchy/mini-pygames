@@ -20,8 +20,11 @@ seg1 = Segment(40,40, upright=True)
 seg2 = Segment(60,20)
 seg3 = Segment(160,40, upright=True)
 seg4 = Segment(60,140)
+seg5 = Segment(160,160, upright=True)
+seg6 = Segment(40,160, upright=True)
+seg7 = Segment(60,260)
 
-dig = Digit([seg1, seg2, seg3, seg4])
+dig = Digit([seg1, seg2, seg3, seg4, seg5, seg6, seg7])
 
 run = True
 while run:
