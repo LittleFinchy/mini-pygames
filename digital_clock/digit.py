@@ -5,7 +5,7 @@ from segment import Segment
 class Digit:
     def __init__(self, x, y):
         self.segments = []
-
+        self.dim = False
 
         # Make 7 segments centered around the x,y that is given
         self.segments.append(Segment(x, y + 20, upright=True))
@@ -36,6 +36,12 @@ class Digit:
         for seg in numbers.get(number):
             seg.active = False
 
+        if self.dim:
+            for i in range(7):
+                self.segments[i].dim = True
+        else:
+            for i in range(7):
+                self.segments[i].dim = False
 
     def show(self, win):
         for seg in self.segments:

@@ -19,7 +19,7 @@ class Segment:
     def show(self, win):
         RED = (255, 0, 0)
         if self.dim:
-            RED = (55, 0, 0)
+            RED = (100, 0, 0)
         if self.active:
             pygame.draw.rect(win, RED, (self.x, self.y, self.w, self.h))
             if not self.upright:

@@ -20,13 +20,17 @@ class Clock:
         self.hour1.dim = True
         h2 = hour
         if len(str(hour)) == 2:
+            self.hour1.dim = False
             h1 = int(str(hour)[0])
             h2 = int(str(hour)[1])
         self.hour1.update(h1)
         self.hour2.update(h2)
 
-        m1 = int(str(minute)[0])
-        m2 = int(str(minute)[1])
+        m1 = 0
+        m2 = minute
+        if len(str(minute)) == 2:
+            m1 = int(str(minute)[0])
+            m2 = int(str(minute)[1])
         self.minute1.update(m1)
         self.minute2.update(m2)
 
