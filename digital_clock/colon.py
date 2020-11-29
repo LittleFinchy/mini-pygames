@@ -15,5 +15,5 @@ class Colon:
 
     def show(self, win):
         if self.active:
-            pygame.draw.rect(win, (255, 0, 0), (self.x - 10, self.y - 40, 20, 20))
-            pygame.draw.rect(win, (255, 0, 0), (self.x - 10, self.y + 40, 20, 20))
+            pygame.draw.rect(win, (200, 0, 0), (self.x - 10, self.y - 40, 20, 20))
+            pygame.draw.rect(win, (200, 0, 0), (self.x - 10, self.y + 40, 20, 20))
