@@ -19,7 +19,16 @@ class Digit:
 
     def update(self, number):
         numbers = {
-            0: self.segments[5].active
+            0: [self.segments[5].active], 
+            1: [self.segments[0].active, self.segments[2].active, self.segments[4].active, self.segments[5].active, self.segments[6].active],
+            2: [self.segments[0].active, self.segments[3].active],
+            3: [self.segments[0].active, self.segments[3].active],
+            4: [self.segments[2].active, self.segments[4].active, self.segments[6].active],
+            5: [],
+            6: [],
+            7: [],
+            8: [],
+            9: []
         }
 
     def show(self, win):

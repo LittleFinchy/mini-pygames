@@ -13,10 +13,21 @@ class Clock:
     
     def update(self, hour, minute, seconds):
         self.col.update(seconds)
-        # self.hour1.update(hour)
-        # self.hour2.update(hour)
-        # self.minute1.update(minute)
-        # self.minute2.update(minute)
+
+        if hour > 12:
+            hour -= 12
+        h1 = 0
+        h2 = hour
+        if len(str(hour)) == 2:
+            h1 = int(str(hour)[0])
+            h2 = int(str(hour)[1])
+        self.hour1.update(h1)
+        self.hour2.update(h2)
+
+        m1 = int(str(minute)[0])
+        m2 = int(str(minute)[1])
+        self.minute1.update(m1)
+        self.minute2.update(m2)
 
     def show(self, win):
         self.col.show(win)
