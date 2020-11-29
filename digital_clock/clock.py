@@ -17,6 +17,7 @@ class Clock:
         if hour > 12:
             hour -= 12
         h1 = 0
+        self.hour1.dim = True
         h2 = hour
         if len(str(hour)) == 2:
             h1 = int(str(hour)[0])
