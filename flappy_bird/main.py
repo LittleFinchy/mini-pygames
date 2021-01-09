@@ -1,10 +1,11 @@
 import pygame
 import os
+from game import Game
 
 os.environ['SDL_VIDEO_CENTERED']='1'
 pygame.init()
 
-width, height = 600, 600
+width, height = 1200, 800
 fps = 60
 win = pygame.display.set_mode((width,height))
 clock = pygame.time.Clock()
@@ -13,11 +14,9 @@ clock = pygame.time.Clock()
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 
-###
 
-# YOUR CODE HERE
+game = Game()
 
-###
 
 run = True
 while run:
@@ -29,10 +28,7 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    ###
-
-    # YOUR CODE HERE
-
-    ###
+    game.update()
+    game.show(win)
 
 pygame.quit()
