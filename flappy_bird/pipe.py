@@ -5,8 +5,8 @@ import random
 class Pipe:
     def __init__(self):
         self.x = pygame.display.get_surface().get_size()[0] + 20
-        self.y = random.randint(20, pygame.display.get_surface().get_size()[1] - 220)
-        self.gap = random.randint(100, 200)
+        self.y = random.randint(20, pygame.display.get_surface().get_size()[1] - 320)
+        self.gap = random.randint(200, 300)
         self.w = 20
     
     def update(self):
