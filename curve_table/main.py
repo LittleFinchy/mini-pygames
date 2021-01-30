@@ -4,7 +4,7 @@ from grid import Grid
 os.environ['SDL_VIDEO_CENTERED']='1'
 pygame.init()
 
-width, height = 800, 800
+width, height = 900, 900
 fps = 30
 win = pygame.display.set_mode((width,height))
 clock = pygame.time.Clock()
@@ -15,7 +15,7 @@ BLACK = (0,0,0)
 
 
 ### make grid --> fill grid with shapes
-gridSize = (6,6)
+gridSize = (10,10)
 grid = Grid(gridSize)
 
 run = True
