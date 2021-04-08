@@ -52,9 +52,9 @@ run = True
 while run:
     clock.tick(fps)
 
-    R = random.randint(1,255)
-    B = random.randint(1,255)
-    G = random.randint(1,255)
+    R = 200 #random.randint(1,255)
+    B = 0 #random.randint(1,255)
+    G = 0 #random.randint(1,255)
 
     if len(paint_points) > 1:
         pygame.draw.aalines(win, (R,G,B), False, paint_points)
